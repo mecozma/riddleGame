@@ -1,0 +1,37 @@
+/*Box sizing*/
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+
+body {
+	padding: 40px;
+}
+
+body, p { 
+	font-size: 24px; 
+}
+
+#questions {
+	list-style: decimal;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	padding-left: 0;
+	margin-top: 0;
+	background: #fff;
+}
+
+#questions > li {
+	padding: 10px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.wrong-answer {
+	color: rgba(0,0,0,.3);
+}
+
+
+
