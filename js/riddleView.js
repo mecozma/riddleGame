@@ -10,6 +10,7 @@ var RiddleView = Backbone.View.extend({
             if ($textBox.val() < 1) {
                 alert('Please insert an answer!');
             };
+            $textBox.addClass('hide');
             console.log('Enter pressed');
             $textBox.val('');
         }
@@ -20,7 +21,7 @@ var RiddleView = Backbone.View.extend({
         var correctAnswer = this.model.escape('punchline').toLowerCase();
         
         if (userAnswer === correctAnswer) {
-            this.$el.append('You got it right!');
+            this.$el.append('You got it right!').addClass('right-answer');
         } else {
             this.$el.append('Nah! try again...').addClass('wrong-answer');
         }

@@ -3,7 +3,7 @@ $(document).ready(function(){
   riddles.fetch({
       success: function() {
         var riddlesView = new RiddlesView({model: riddles});
-        $('body').append(riddlesView.render().$el);
+        $('#app-body').append(riddlesView.render().$el);
       }
   });
 
