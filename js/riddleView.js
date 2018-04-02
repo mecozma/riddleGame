@@ -10,23 +10,26 @@ var RiddleView = Backbone.View.extend({
             if ($textBox.val() < 1) {
                 alert('Please insert an answer!');
             };
+
+            var $textBox = this.$('#userAnswer');
+            var userAnswer = $textBox.val().toLowerCase();
+            var correctAnswer = this.model.escape('punchline').toLowerCase();
+            
+            if (userAnswer === correctAnswer) {
+                this.$el.append('You got it right!').addClass('right-answer');
+            } else {
+                this.$el.append('Nah! try again...').addClass('wrong-answer');
+            }
+
             $textBox.addClass('hide');
             console.log('Enter pressed');
             $textBox.val('');
         }
     },
     onClickCompare: function(){
-        var $textBox = this.$('#userAnswer');
-        var userAnswer = $textBox.val().toLowerCase();
-        var correctAnswer = this.model.escape('punchline').toLowerCase();
-        
-        if (userAnswer === correctAnswer) {
-            this.$el.append('You got it right!').addClass('right-answer');
-        } else {
-            this.$el.append('Nah! try again...').addClass('wrong-answer');
-        }
+       
         this.$el.append("<br />" + "<span>" + this.model.escape('punchline') + "</span>");
-        console.log("Your answer is: " + correctAnswer);
+        
         
     },
     initialize: function(options) {

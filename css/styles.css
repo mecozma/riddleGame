@@ -37,4 +37,14 @@ body, p {
 	display: none;
 }
 
+#score {
+	width: auto;
+	height: 100px;
+	border: 1px dashed gray;
+	margin-top: 20px;
+}
+
+.fade {
+	color: rgba(0,0,0,.3);
+}
 
